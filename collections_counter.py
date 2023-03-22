@@ -14,12 +14,11 @@ def top_three_letters(string):
     # loop through the string and store the count for each letter
     # sort the dictionary by the count and find the  three most frequent letters
     # return a formatted lis to match the output
-    # counter = defaultdict(int)
-    # for c in string:
-    #     counter[c] += 1
-    # top_three = sorted(counter, key=lambda k: counter[k], reverse=True)[:3]
-    #
-    # return [(letter, counter[letter]) for letter in top_three]
+    counter = defaultdict(int)
+    for c in string:
+        counter[c] += 1
+    top_three = sorted(counter, key=lambda k: counter[k], reverse=True)[:3]
 
-    return  Counter(string).most_common(3)
+    return [(letter, counter[letter]) for letter in top_three]
+
 

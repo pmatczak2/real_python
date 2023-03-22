@@ -2,11 +2,11 @@ import string
 
 
 def get_key_to_letters():
-    characters = string.ascii_lowercase
-    digits = string.digits
+    character = string.ascii_lowercase
+    digit = string.digits
+    point_of_index = 0
     placeholder = {}
-    index_point = 0
-    for key in digits:
+    for key in digit:
         if key == "0":
             placeholder[key] = " "
         elif key == "1":
@@ -15,9 +15,9 @@ def get_key_to_letters():
             num_letter = 3
             if key in {"7", "9"}:
                 num_letter = 4
-            letters = characters[index_point: index_point + num_letter]
-            placeholder[key] = letters
-            index_point += num_letter
+            letter = character[point_of_index: point_of_index + num_letter]
+            placeholder[key] = letter
+            point_of_index += num_letter
     return placeholder
 
 

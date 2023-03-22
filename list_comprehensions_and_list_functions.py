@@ -37,7 +37,7 @@ print(f"\n{outcome}")
 # create a list of ruples with furits and prices
 fruit_prices = [('banana', 3), ("apple", 1), ("orange", 5)]
 
-# stort the list based on the prices of the fruit
+# sort the list based on the prices of the fruit
 sorted_prices = sorted(fruit_prices, key=lambda x: x[1])
 
 print(f"\n{sorted_prices}")
