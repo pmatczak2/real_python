@@ -6,8 +6,9 @@ class Fuselage:
         self.is_clean = False
         self.fuselage_arrived = False
         self.port_wing_attached = False
+        self.starboard_wing_attached = False
+        self.star_bolt_pattern = 0
         self.bolts_used = 0
-
 
     def clean(self):
         self.is_clean = True
@@ -28,4 +29,26 @@ class Fuselage:
             return True
         else:
             return False
+
+
+    def attach_starbord_wing_to_fuselage(self,bolt):
+        self.bolts = len(bolt)
+        if self.bolts == 5:
+            self.starboard_wing_attached = True
+            return True
+        else:
+            return False
+
+    def bolt_using_star_pattern(self, pattern):
+        self.star_bolt_pattern = len(pattern)
+        if self.star_bolt_pattern != 5:
+            return False
+        for key, value in pattern.items():
+            print(f"{key} -> {value}")
+
+        return True
+
+
+
+
 

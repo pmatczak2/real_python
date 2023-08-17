@@ -45,3 +45,5 @@ def dispatch_dict(operator, x, y):
         'mul': lambda: x * y,
         'div': lambda: x / y,
     }.get(operator, lambda: None)()
+
+print(dispatch_dict('add',2,2))

@@ -25,6 +25,8 @@ def set_grade_naive(name, score):
     grade.append(score)
 
 
-set_grade_naive("pete", 100)
+#
 
+set_grade_naive("pete", 100)
+set_grade_naive("fart", 5)
 print(student_grades)
