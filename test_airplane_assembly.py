@@ -22,12 +22,12 @@ def test_is_fuselage_ready_for_attachment():
 #  this requires the attachment to have 5 bolts bolted in to the fuselage.
 #  i need to assure that the port wing is attached using exactly 5 bolts
 def test_attach_port_wing_to_fuselage():
-    port_assembly_wing = fuselage.attach_port_wing_to_fuselage(["bolt1", "bolt2", "bolt3", "bolt4", "bolt5"])
+    port_assembly_wing = fuselage.attach_port_wing_to_fuselage(bolt_pattern)
     assert port_assembly_wing, "Wing should be attached using 5 bolt"
 
 
 def test_attach_starboard_wing_to_fuselage():
-    starboard_assembly_wing = fuselage.attach_starbord_wing_to_fuselage(["bolt1", "bolt2", "bolt3", "bolt4", "bolt5"])
+    starboard_assembly_wing = fuselage.attach_starbord_wing_to_fuselage(bolt_pattern)
     assert starboard_assembly_wing, "Starboard wing is attached using 5 bolts"
 
 # test the attachment to the fuselage was used the star pattern
@@ -35,11 +35,18 @@ def test_attach_starboard_wing_to_fuselage():
 # 4th midleft bolt, 5th mid rigth bolt. In this order
 
 def test_bolt_using_star_pattern():
-
     star = fuselage.bolt_using_star_pattern(bolt_pattern)
     assert star, "Wings were bolted to fuselage using the star pattern"
 
+# mount two engine to the wings
 
-# now i need to attach port and starboard wing using the star pattern!
-def test_attach_port_and_starboard_wing_to_fuselage_using_the_star_pattern():
-    fuselage.bolt_prot_wing_using_star_pattern()
+def test_attach_engines_to_wings():
+    success, message = fuselage.attach_engines_to_wing()
+    assert not success, message
+
+    success = fuselage.attach_port_wing_to_fuselage(bolt_pattern)
+    assert success
+
+    success = fuselage.attach_starbord_wing_to_fuselage(bolt_pattern)
+    assert success
+
